@@ -1,0 +1,8 @@
+# Managed by dinext_control_center — do not copy policy scripts into this repo.
+include:
+  - project: erpnext/dinext/dinext_control_center
+    ref: feat/dinext-development-rollout
+    file: /ci/dinext-app.yml
+
+variables:
+  DINEXT_CONTROL_CENTER_REF: "feat/dinext-development-rollout"
