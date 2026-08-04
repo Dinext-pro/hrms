@@ -1,8 +1,9 @@
 # Managed by dinext_control_center — do not copy policy scripts into this repo.
+# Required MR jobs from /ci/dinext-app.yml: gitflow:mr-guard, app:smoke, app:unit
 include:
   - project: erpnext/dinext/dinext_control_center
-    ref: feat/dinext-development-rollout
+    ref: main
     file: /ci/dinext-app.yml
 
 variables:
-  DINEXT_CONTROL_CENTER_REF: "feat/dinext-development-rollout"
+  DINEXT_CONTROL_CENTER_REF: "main"
