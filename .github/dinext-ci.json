@@ -1,0 +1,8 @@
+{
+  "app": "hrms",
+  "package_dir": "hrms",
+  "mode": "repository",
+  "gitflow": false,
+  "frontend_tests": false,
+  "skip_test_records": false
+}
