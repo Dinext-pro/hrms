@@ -75,3 +75,9 @@ Frappe HR has everything you need to drive excellence within the company. It's a
 GNU GPL V3. (See [license.txt](license.txt) for more information).
 
 The HR code is licensed as GNU General Public License (v3) and the copyright is owned by Frappe Technologies Pvt Ltd (Frappe) and Contributors.
+
+## Dinext maintained references
+
+The maintained line of this fork is `dinext/main/version-15`. Selected vendor snapshots use `dinext/vendor/<line>`; company task branches use `dinext/feature/<task>`, `dinext/fix/*` or `dinext/upgrade/*`. Upstream branch names elsewhere in this README describe the original project. For Dinext work, use origin `https://github.com/Dinext-pro/hrms.git` and the maintained Dinext line. Contributors may use their own branch names in external forks.
+
+Future authorized release tags use `dinext/<upstream-tag>` or `dinext/<upstream-tag>-dinext.N`; application and upstream versions are unchanged. Existing published tags remain immutable. This reference-name transition enables no deployment, publishing or automatic upstream synchronization.
