@@ -4,7 +4,7 @@ Own applications use feature/fix -> develop -> release -> main. A selective
 release can start at a historical feature commit accepted by a real develop PR;
 its complete head must remain reachable from develop. This preserves unfinished
 work on develop without manufacturing ancestry or merging unapproved features.
-External forks use their maintained main/<line> branch through a reviewed PR.
+External forks use their maintained dinext/main/<line> branch through a reviewed PR.
 
 Dinext policy runs pinned trusted code without executing the PR. The trusted
 registry, not a proposed gitflow flag, selects the route and validation profile.
@@ -28,3 +28,5 @@ release notes, compatibility evidence and manifest. Existing tags are immutable.
 
 Deployment, publishing, paid agents, live smoke and external notifications remain
 disabled. Imported upstream workflows remain under imported-workflows-disabled.
+
+Company-managed fork branches use exactly one `dinext/` prefix, including integration, vendor and task branches. External contributors may keep names such as `patch-1` in their own fork. Future authorized release tags use `dinext/<upstream-tag>` or `dinext/<upstream-tag>-dinext.N`; application and upstream versions remain unchanged. Historical unprefixed tags remain immutable. No release or deployment is published by this reference-name transition.
