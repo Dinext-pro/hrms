@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "upstream": "frappe/hrms",
+  "selected_tag": "v15.64.5",
+  "selected_commit": "e58e0c22ecb6c2d7f3f3b4d5b70cc426d59e0ee9",
+  "integration_branch": "dinext/main/version-15",
+  "prior_dinext_commit": "cdd0b71d6ad90ea333211e579564ab8f4daf302a",
+  "prior_vendor_snapshot": "24bac85c1b6aa1fe9298bf54963a19a8906aa282",
+  "customizations": "docs/dinext-source-upgrade.md",
+  "automatic_sync": false
+}
