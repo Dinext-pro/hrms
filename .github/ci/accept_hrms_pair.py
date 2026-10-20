@@ -119,6 +119,12 @@ run(
     cwd=bench,
 )
 run("bench", "--site", site, "execute", "frappe.tests.ui_test_helpers.create_test_user", cwd=bench)
+run(
+    "bench", "--site", site, "execute",
+    "frappe.utils.password.update_password",
+    "--kwargs", json.dumps({"user": "frappe@example.com", "pwd": admin_password}),
+    cwd=bench,
+)
 run("bench", "--site", site, "set-config", "host_name", "http://127.0.0.1:8000", cwd=bench)
 run("bench", "--site", site, "set-config", "developer_mode", "1", cwd=bench)
 
@@ -159,9 +165,11 @@ try:
     env = os.environ.copy()
     env["CYPRESS_baseUrl"] = "http://127.0.0.1:8000"
     env["CYPRESS_adminPassword"] = admin_password
+    env["CYPRESS_video"] = "false"
+    cypress_bin = frappe_app / "node_modules" / ".bin" / "cypress"
     run(
-        "xvfb-run", "-a", "yarn", "exec", "cypress", "run",
-        "--browser", "electron", "--spec", str(spec),
+        "xvfb-run", "-a", str(cypress_bin), "run",
+        "--browser", "electron", "--spec", "cypress/integration/awesome_bar.js",
         cwd=frappe_app, timeout=1800, env=env,
     )
     print("Cypress awesome-bar spec passed on the HRMS site.", flush=True)
