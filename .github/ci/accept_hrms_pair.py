@@ -115,7 +115,7 @@ setup_args = {
 run(
     "bench", "--site", site, "execute",
     "frappe.desk.page.setup_wizard.setup_wizard.setup_complete",
-    "--kwargs", json.dumps(setup_args),
+    "--kwargs", json.dumps({"args": setup_args}),
     cwd=bench,
 )
 run("bench", "--site", site, "execute", "frappe.tests.ui_test_helpers.create_test_user", cwd=bench)
