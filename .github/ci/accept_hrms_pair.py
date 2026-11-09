@@ -1,6 +1,6 @@
 """Install HRMS on the Frappe and ERPNext 15.123.0 pair and, when asked, run one Cypress spec.
 
-Frappe and ERPNext come from their paired upgrade branches. This does not touch a
+Frappe and ERPNext come from accepted immutable 15.123.0 snapshots. This does not touch a
 running site. Compatibility acceptance stops after migrate, build and ping.
 Cypress acceptance then completes setup and runs the upstream Frappe awesome-bar spec.
 """
@@ -41,8 +41,8 @@ def fetch_repo(repo, ref, name):
     return destination
 
 
-frappe_source = fetch_repo("Dinext-pro/dinext_platform", "dinext/upgrade/v15.123.0", "frappe")
-erpnext_source = fetch_repo("Dinext-pro/dinext_erp", "dinext/upgrade/v15.123.0", "erpnext")
+frappe_source = fetch_repo("Dinext-pro/dinext_platform", "de9b663eb808e8ffbe7d38a0a3233a45745831a6", "frappe")
+erpnext_source = fetch_repo("Dinext-pro/dinext_erp", "548e80297397ba5d3ca4fb111a923fe784a37f4e", "erpnext")
 run("git", "update-ref", "refs/heads/dinext-ci-input", "HEAD", cwd=frappe_source)
 if bench.exists():
     raise SystemExit("Each acceptance run requires a fresh bench")
