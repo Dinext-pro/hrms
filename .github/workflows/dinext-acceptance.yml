@@ -3,8 +3,6 @@ on:
   push:
     tags: ['v*', 'dinext/**']
   workflow_call: {}
-  pull_request:
-    branches: ['dinext/main/version-15']
   workflow_dispatch: {}
 permissions:
   contents: read
